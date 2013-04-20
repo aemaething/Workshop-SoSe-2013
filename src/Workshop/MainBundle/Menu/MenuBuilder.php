@@ -40,6 +40,18 @@ class MenuBuilder {
 		$menu = $this->factory->createItem("root", array("childrenAttributes" => array("class" => "dropdown-menu")));
 		$menu->setCurrentUri($request->getRequestUri());
 
+		// local tools
+		$localTools = $menu->addChild("Local tools", array(
+				"uri" => "#",
+				"childrenAttributes" => array("class" => "dropdown-menu"),
+				"attributes" => array("class" => "dropdown-submenu pull-left")));
+		$localTools->addChild("phpMyAdmin", array(
+				"uri" => "/__info__/",
+				"linkAttributes" => array("target" => "_blank")));
+		$localTools->addChild("APC", array(
+				"uri" => "/__apc__/",
+				"linkAttributes" => array("target" => "_blank")));
+
 		// symfony documentation
 		$symfony = $menu->addChild("Symfony", array(
 				"uri" => "http://www.symfony.com",
@@ -49,7 +61,7 @@ class MenuBuilder {
 		$symfony->addChild("The book", array(
 				"uri" => "http://symfony.com/doc/current/book/index.html",
 				"linkAttributes" => array("target" => "_blank")));
-		$symfony->addChild("The clookbook", array(
+		$symfony->addChild("The cookbook", array(
 			"uri" => "http://symfony.com/doc/current/cookbook/index.html",
 			"linkAttributes" => array("target" => "_blank")));
 		$symfony->addChild("Index", array(
