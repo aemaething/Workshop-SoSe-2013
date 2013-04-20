@@ -1,0 +1,10 @@
+{% extends 'WorkshopTwitterBootstrapBundle::base.html.twig' %}
+
+{% block navigation %}{% endblock %}
+
+{% block content %}
+    <div class="hero-unit">
+        <h1>An error occurred!</h1>
+        <p class="text-error">{{ status_code }}: {{ status_text }}</p>
+    </div>
+{% endblock %}

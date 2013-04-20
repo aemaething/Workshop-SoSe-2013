@@ -1,0 +1,28 @@
+{% extends "WorkshopTwitterBootstrapBundle::main.html.twig" %}
+
+{% block mainNavigation %}
+    <div class="nav-collapse collapse">
+        {{ knp_menu_render('main', {'currentClass': 'active', 'ancestorClass': 'active'}) }}
+    </div>
+{% endblock %}
+
+
+{% block footer %}
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="span4">
+                    <p>HS Emden/Leer &middot; Symfony Workshop &middot; {% block currentBundle %}MainBundle{% endblock %}</p>
+                </div>
+                <div class="span8">
+                    {% block footerNavigation %}
+                        <div class="pull-right dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Documentation<b class="caret"></b></a>
+                            {{ knp_menu_render('footer', {'currentClass': 'active', 'ancestorClass': 'active'}) }}
+                        </div>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

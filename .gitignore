@@ -1,0 +1,10 @@
+/web/bundles/
+/app/bootstrap.php.cache
+/app/parameters.ini
+/app/cache/*
+/app/logs/*
+/build/
+/vendor/
+/bin/
+/composer.lock
+/.idea
