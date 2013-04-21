@@ -1,5 +1,12 @@
 {% extends "WorkshopTwitterBootstrapBundle::main.html.twig" %}
 
+
+{% block title %}Symfony Workshop &middot; HS Emden/Leer{% endblock %}
+
+
+{% block projectName %}Symfony Workshop{% endblock %}
+
+
 {% block mainNavigation %}
     <div class="nav-collapse collapse">
         {{ knp_menu_render('main', {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': true}) }}
@@ -11,10 +18,10 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="span4">
+                <div class="span10">
                     <p>HS Emden/Leer &middot; Symfony Workshop &middot; {% block currentBundle %}MainBundle{% endblock %}</p>
                 </div>
-                <div class="span8">
+                <div class="span2">
                     {% block footerNavigation %}
                         <div class="pull-right dropdown">
                             <a class="dropdown-toggle" href="#" data-toggle="dropdown">Tools / Docs<b class="caret"></b></a>
