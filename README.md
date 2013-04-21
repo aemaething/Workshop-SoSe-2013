@@ -21,7 +21,8 @@ Wilkommen zum [**Symfony**][1] Workshop!
 -----------------------
 * rudimentäre Kenntnis der [**PHP Syntax**][6]
 * idealerweise habt ihr GP2 schon bestanden, zumindest gerade belegt
-* ihr habt eine Linux-Konsole schon mal gesehen ;)
+* idealerweise habt ihr WEB schon bestanden, zumindest gerade belegt
+* ihr habt schon mal eine Konsole benutzt ;)
 * im Zweifel sprecht mich einfach an
 
 
