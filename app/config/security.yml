@@ -23,10 +23,10 @@ security:
             security: false
 
         secured_area:
-            pattern:    ^/secured
+            pattern:    ^/.*/secured
             anonymous: ~
             http_basic:
                 realm: "Secured Workshop Area"
 
     access_control:
-        - { path: ^/secured, roles: ROLE_USER }
+        - { path: ^/.*/secured, roles: ROLE_USER }

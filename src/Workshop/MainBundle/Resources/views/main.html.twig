@@ -2,7 +2,7 @@
 
 {% block mainNavigation %}
     <div class="nav-collapse collapse">
-        {{ knp_menu_render('main', {'currentClass': 'active', 'ancestorClass': 'active'}) }}
+        {{ knp_menu_render('main', {'currentClass': 'active', 'ancestorClass': 'active', 'allow_safe_labels': true}) }}
     </div>
 {% endblock %}
 

@@ -16,15 +16,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
  */
 class SecuredController extends Controller {
 
-
 	/**
 	 * @param Request $request
+	 * @return array
 	 *
-	 * @Route("/", name="workshop_secured_index")
+	 * @Route("/", name="workshop_lessonOne_secured_index")
 	 * @Template()
 	 */
 	public function indexAction(Request $request) {
-
+		return array();
 	}
 
 }
