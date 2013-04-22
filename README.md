@@ -23,6 +23,7 @@ Wilkommen zum [**Symfony**][1] Workshop!
 * idealerweise habt ihr WEB schon bestanden, zumindest gerade belegt
 * ihr kennt den Unterschied zwischen [**GET** und **POST**][7]
 * ihr habt schon mal eine Konsole benutzt ;)
+* ihr habt euch mal [**Twitter Bootstrap**][8] angeschaut (oder tut dies jetzt)
 * im Zweifel sprecht mich einfach an
 
 
@@ -33,3 +34,4 @@ Wilkommen zum [**Symfony**][1] Workshop!
 [5]: https://getfirebug.com/
 [6]: http://www.php.net/manual/de/langref.php
 [7]: http://www.w3schools.com/tags/ref_httpmethods.asp
+[8]: http://twitter.github.io/bootstrap/
