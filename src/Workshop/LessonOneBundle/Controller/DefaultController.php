@@ -12,6 +12,8 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="workshop_lessonOne_default_index")
      * @Template()
+	 *
+	 * @see http://twig.sensiolabs.org/documentation
      */
     public function indexAction()
     {
@@ -22,6 +24,11 @@ class DefaultController extends Controller
     }
 
 
+	/**
+	 * @return array
+	 *
+	 * @see https://github.com/fzaninotto/Faker
+	 */
 	private function createIterableData() {
 		$faker = $this->get('faker.generator');
 
