@@ -2,6 +2,41 @@
 
 {% block content %}
     <div class="hero-unit">
-        <h1>Hello, world!</h1>
-        <p>Willkommen beim Symfony Workshop!</p>
+        <h1>Lesson One</h1>
+        <p>Twig</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h3>Schleifen</h3>
+                {% for idx,data in iterable %}
+                    {% if loop.first %}<ul class="unstyled">{% endif %}
+                        <li>
+                            <i>Index: {{ idx }}</i>:
+                            {{ data }}
+                        </li>
+                    {% if loop.last %}</ul>{% endif %}
+                {% else %}
+                    <p class="text-error">Keine Daten zum Iterieren!</p>
+                {% endfor %}
+                <hr />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span12">
+                <h3>Filter</h3>
+                {{ datetime|date("d.m.Y, H:i:s", "Europe/Berlin") }}
+                <hr />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span12">
+                <h3>Weiteres</h3>
+                ... gibt es auf der Twig Dokumentation zu sehen.
+                <hr />
+            </div>
+        </div>
+    </div>
 {% endblock %}

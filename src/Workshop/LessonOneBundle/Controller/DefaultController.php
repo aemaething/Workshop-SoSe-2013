@@ -15,6 +15,21 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        return array(
+			"iterable" => $this->createIterableData(),
+			"datetime" => new \DateTime("now")
+		);
     }
+
+
+	private function createIterableData() {
+		$faker = $this->get('faker.generator');
+
+		$data = array();
+		for ($i = 1; $i <= 10; $i++) {
+			$data[$i] = sprintf("%s, %s", $faker->name, $faker->address);
+		}
+
+		return $data;
+	}
 }

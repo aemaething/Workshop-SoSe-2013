@@ -21,7 +21,8 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
 
 			// external bundles, added for workshop
-			new \Knp\Bundle\MenuBundle\KnpMenuBundle(),
+			new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+			new Bazinga\Bundle\FakerBundle\BazingaFakerBundle(),
 
 			// bundles, created for workshop
 			new Workshop\MainBundle\WorkshopMainBundle(),
