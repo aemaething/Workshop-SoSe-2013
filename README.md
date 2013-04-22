@@ -22,6 +22,7 @@ Wilkommen zum [**Symfony**][1] Workshop!
 * rudimentäre Kenntnis der [**PHP Syntax**][6]
 * idealerweise habt ihr GP2 schon bestanden, zumindest gerade belegt
 * idealerweise habt ihr WEB schon bestanden, zumindest gerade belegt
+* ihr kennt den Unterschied zwischen [**GET** und **POST**][7]
 * ihr habt schon mal eine Konsole benutzt ;)
 * im Zweifel sprecht mich einfach an
 
@@ -32,3 +33,4 @@ Wilkommen zum [**Symfony**][1] Workshop!
 [4]: http://www.mozilla.org/de/firefox/new/
 [5]: https://getfirebug.com/
 [6]: http://www.php.net/manual/de/langref.php
+[7]: http://www.w3schools.com/tags/ref_httpmethods.asp
