@@ -1,6 +1,5 @@
 Symfony Workshop
 ================
-
 Wilkommen zum [**Symfony**][1] Workshop!
 
 1) Notwendige Hardware
