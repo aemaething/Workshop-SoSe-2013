@@ -26,9 +26,9 @@ Wilkommen zum [**Symfony**][1] Workshop!
 * im Zweifel sprecht mich einfach an
 
 
-[1]:	http://www.symfony.com
-[2]:	https://www.virtualbox.org/
-[3]:	http://www.vagrantup.com/
-[4]:	http://www.mozilla.org/de/firefox/new/
-[5]:	https://getfirebug.com/
-[6]:	http://www.php.net/manual/de/langref.php
+[1]: http://www.symfony.com
+[2]: https://www.virtualbox.org/
+[3]: http://www.vagrantup.com/
+[4]: http://www.mozilla.org/de/firefox/new/
+[5]: https://getfirebug.com/
+[6]: http://www.php.net/manual/de/langref.php
