@@ -66,6 +66,6 @@ swiftmailer:
     spool:     { type: memory }
 
 bazinga_faker:
-    orm: doctrine
-    seed:       4535647456745
-    locale:     de_DE
+    orm:      doctrine
+    seed:     4535647456745
+    locale:   de_DE
