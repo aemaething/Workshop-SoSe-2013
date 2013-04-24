@@ -7,6 +7,15 @@ workshop_lessonOne_bundle:
     type:     annotation
     prefix:   /lesson-one
 
+workshop_lesson_two:
+    resource: "@WorkshopLessonTwoBundle/Controller/"
+    type:     annotation
+    prefix:   /lesson-two
+
+
+
+
+
 # no routing needed
 #workshop_twitter_bootstrap:
 #    resource: "@WorkshopTwitterBootstrapBundle/Controller/"

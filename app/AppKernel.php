@@ -19,15 +19,17 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+			new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 
 			// external bundles, added for workshop
 			new Knp\Bundle\MenuBundle\KnpMenuBundle(),
 			new Bazinga\Bundle\FakerBundle\BazingaFakerBundle(),
 
 			// bundles, created for workshop
+			new Workshop\TwitterBootstrapBundle\WorkshopTwitterBootstrapBundle(),
 			new Workshop\MainBundle\WorkshopMainBundle(),
 			new Workshop\LessonOneBundle\WorkshopLessonOneBundle(),
-			new Workshop\TwitterBootstrapBundle\WorkshopTwitterBootstrapBundle(),
+            new Workshop\LessonTwoBundle\WorkshopLessonTwoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
