@@ -3,7 +3,7 @@ parameters:
     database_host:     127.0.0.1
     database_port:     ~
     database_name:     workshop
-    database_user:     root
+    database_user:     workshop
     database_password: workshop
 
     mailer_transport:  smtp
