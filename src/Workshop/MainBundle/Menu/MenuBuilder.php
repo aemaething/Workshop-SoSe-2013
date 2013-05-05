@@ -37,8 +37,8 @@ class MenuBuilder {
 
 	public function createFooterMenu(Request $request) {
 
-		$menu = $this->factory->createItem("root", array("childrenAttributes" => array("class" => "dropdown-menu")));
-		$menu->setCurrentUri($request->getRequestUri());
+		$menu = $this->factory->createItem("root", array(
+			"childrenAttributes" => array("class" => "dropdown-menu")));
 
 		// local tools
 		$localTools = $menu->addChild("Local tools", array(
@@ -92,6 +92,23 @@ class MenuBuilder {
 		$knpMenu->addChild("KnpMenu", array(
 				"uri" => "https://github.com/KnpLabs/KnpMenu",
 				"linkAttributes" => array("target" => "_blank")));
+
+		// symfony packages
+		$packages = $menu->addChild("Symfony packages", array(
+			"uri" => "#",
+			"attributes" => array("class" => "dropdown-submenu pull-left"),
+			"childrenAttributes" => array("class" => "dropdown-menu"),
+			"linkAttributes" => array("target" => "_blank")));
+		$packages->addChild("KNP Bundles", array(
+			"uri" => "http://knpbundles.com/",
+			"linkAttributes" => array("target" => "_blank")));
+		$packages->addChild("Packagist", array(
+			"uri" => "https://packagist.org/",
+			"linkAttributes" => array("target" => "_blank")));
+		$packages->addChild("Composer", array(
+			"uri" => "http://getcomposer.org/",
+			"linkAttributes" => array("target" => "_blank")));
+
 
 		return $menu;
 	}

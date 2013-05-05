@@ -12,4 +12,60 @@ use Doctrine\ORM\EntityRepository;
  */
 class BlogPostRepository extends EntityRepository
 {
+	/**
+	 * Creates a "defaulted" QueryBuilder used to fetch only "online" posts.
+	 * Data will be sorted by created_at in descending order.
+	 *
+	 * @return \Doctrine\ORM\QueryBuilder
+	 */
+	private function createBaseQueryBuilder() {
+		return $this
+			->createQueryBuilder('bp')
+			->select('bp')
+			->where('bp.isOnline = 1')
+			->orderBy('bp.createdAt', 'desc');
+	}
+
+
+	/**
+	 * Creates a query used to paginate.
+	 * @return \Doctrine\ORM\Query
+	 */
+	public function createPaginationQuery() {
+		return $this
+			->createBaseQueryBuilder()
+			->getQuery();
+	}
+
+
+	/**
+	 * Fetches a single online blog post by a given slug.
+	 * @param $slug
+	 * @return mixed
+	 */
+	public function findOneOnlineBySlug($slug) {
+		return $this
+			->createBaseQueryBuilder()
+			->andWhere('bp.slug = :slug')
+			->setMaxResults(1)
+			->getQuery()
+			->setParameter('slug', $slug)
+			->getOneOrNullResult();
+	}
+
+
+	/**
+	 * Fetches a single online blog post by a given id.
+	 * @param $id
+	 * @return \Workshop\LessonTwoBundle\Entity\BlogPost
+	 */
+	public function findOneOnlineById($id) {
+		return $this
+			->createBaseQueryBuilder()
+			->andWhere('bp.id = :id')
+			->setMaxResults(1)
+			->getQuery()
+			->setParameter('id', $id)
+			->getOneOrNullResult();
+	}
 }

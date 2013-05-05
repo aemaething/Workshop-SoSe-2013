@@ -26,10 +26,11 @@ twig:
     strict_variables: %kernel.debug%
 
 # Assetic Configuration
+# http://symfony.com/doc/current/reference/configuration/assetic.html
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ WorkshopTwitterBootstrapBundle, WorkshopMainBundle, WorkshopLessonOneBundle ]
+    bundles:        [ WorkshopTwitterBootstrapBundle, WorkshopMainBundle, WorkshopLessonOneBundle, WorkshopLessonTwoBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite:
@@ -74,6 +75,14 @@ bazinga_faker:
     orm:      doctrine
     seed:     4535647456745
     locale:   de_DE
+    entities:
+        Workshop\LessonTwoBundle\Entity\BlogPost:
+            custom_formatters:
+                slug: { method: null }
+                author: { method: name }
+                title: { method: sentence, parameters: { nbWords: 3 } }
+                abstract: { method: paragraph, parameters: { nbSentences: 3 } }
+                content: { method: paragraph, parameters: { nbSentences: 15 }}
 
 # https://github.com/stof/StofDoctrineExtensionsBundle/blob/master/Resources/doc/index.rst
 stof_doctrine_extensions:
@@ -83,5 +92,16 @@ stof_doctrine_extensions:
             sluggable: true
             timestampable: true
 
+# http://knpbundles.com/KnpLabs/KnpPaginatorBundle
+knp_paginator:
+    page_range: 5                      # default page range used in pagination control
+    default_options:
+        page_name: page                # page query parameter name
+        sort_field_name: sort          # sort field query parameter name
+        sort_direction_name: direction # sort direction query parameter name
+        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        pagination: WorkshopMainBundle::sliding.html.twig     # sliding pagination controls template
+        sortable: WorkshopMainBundle::sortable.html.twig      # sort link template
 
 # more bundle configuration here...

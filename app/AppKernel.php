@@ -24,6 +24,7 @@ class AppKernel extends Kernel
 			// external bundles, added for workshop
 			new Knp\Bundle\MenuBundle\KnpMenuBundle(),
 			new Bazinga\Bundle\FakerBundle\BazingaFakerBundle(),
+			new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
 
 			// bundles, created for workshop
 			new Workshop\TwitterBootstrapBundle\WorkshopTwitterBootstrapBundle(),
