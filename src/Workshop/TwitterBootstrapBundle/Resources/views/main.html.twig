@@ -1,6 +1,4 @@
-{% extends "WorkshopTwitterBootstrapBundle::base.html.twig" %}
-
-{% block title %}Some page title{% endblock %}
+{% extends "::base.html.twig" %}
 
 {% block javascripts %}
     {% javascripts filter='?yui_js'
@@ -11,7 +9,6 @@
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
 {% endblock %}
-
 {% block stylesheets %}
     {% stylesheets filter='?yui_css'
         'bundles/workshoptwitterbootstrap/bootstrap/css/bootstrap.min.css'
@@ -21,7 +18,7 @@
     {% endstylesheets %}
 {% endblock %}
 
-
+{% block title %}Some page title{% endblock %}
 {% block body %}
     {% block header %}
         {% block navigation %}
