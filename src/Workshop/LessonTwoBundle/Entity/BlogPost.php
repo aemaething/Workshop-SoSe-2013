@@ -28,10 +28,10 @@ class BlogPost
      *
      * @ORM\Column(name="title", type="string", length=255)
 	 * @Assert\NotBlank(message="Bitte gib einen Titel ein!")
-	 * @Assert\MaxLength(limit=255, message="Nicht mehr als {{ limit }} Zeichen!")
+	 * @Assert\Length(max=255, maxMessage="Nicht mehr als {{ limit }} Zeichen!")
 	 *
 	 * @see http://symfony.com/doc/current/reference/constraints/NotBlank.html
-	 * @see http://symfony.com/doc/current/reference/constraints/MinLength.html
+	 * @see http://symfony.com/doc/current/reference/constraints/Length.html
      */
     private $title;
 
@@ -49,9 +49,9 @@ class BlogPost
      * @var string
      *
      * @ORM\Column(name="subtitle", type="string", length=255, nullable=true)
-	 * @Assert\MaxLength(limit=255, message="Nicht mehr als {{ limit }} Zeichen!")
+	 * @Assert\Length(max=255, maxMessage="Nicht mehr als {{ limit }} Zeichen!")
 	 *
-	 * @see http://symfony.com/doc/current/reference/constraints/MinLength.html
+	 * @see http://symfony.com/doc/current/reference/constraints/Length.html
      */
     private $subtitle;
 
@@ -59,11 +59,12 @@ class BlogPost
      * @var string
      *
      * @ORM\Column(name="abstract", type="text")
-	 * @Assert\MinLength(limit=10, message="Mindestens {{ limit }} Zeichen!")
-	 * @Assert\MaxLength(limit=1000, message="Nicht mehr als {{ limit }} Zeichen!")
+	 * @Assert\Length(
+	 * 		min=10, max=1000,
+	 * 		minMessage="Mindestens {{ limit }} Zeichen!", maxMessage="Nicht mehr als {{ limit }} Zeichen!"
+	 * )
 	 *
-	 * @see http://symfony.com/doc/current/reference/constraints/MaxLength.html
-	 * @see http://symfony.com/doc/current/reference/constraints/MinLength.html
+	 * @see http://symfony.com/doc/current/reference/constraints/Length.html
      */
     private $abstract;
 
@@ -71,11 +72,12 @@ class BlogPost
      * @var string
      *
      * @ORM\Column(name="content", type="text")
-	 * @Assert\MinLength(limit=25, message="Mindestens {{ limit }} Zeichen!")
-	 * @Assert\MaxLength(limit=2000, message="Nicht mehr als {{ limit }} Zeichen!")
+	 * @Assert\Length(
+	 * 		min=25, max=2000,
+	 * 		minMessage="Mindestens {{ limit }} Zeichen!", maxMessage="Nicht mehr als {{ limit }} Zeichen!"
+	 * )
 	 *
-	 * @see http://symfony.com/doc/current/reference/constraints/MaxLength.html
-	 * @see http://symfony.com/doc/current/reference/constraints/MinLength.html
+	 * @see http://symfony.com/doc/current/reference/constraints/Length.html
      */
     private $content;
 
@@ -84,9 +86,10 @@ class BlogPost
      *
      * @ORM\Column(name="author", type="string", length=64)
 	 * @Assert\NotBlank(message="Bitte gib einen Autor an!")
-	 * @Assert\MaxLength(limit=64, message="Nicht mehr als {{ limit }} Zeichen!")
+	 * @Assert\Length(max=64, maxMessage="Nicht mehr als {{ limit }} Zeichen!")
 	 *
-	 * @see http://symfony.com/doc/current/reference/constraints/MaxLength.html
+	 * @see http://symfony.com/doc/current/reference/constraints/NotBlank.html
+	 * @see http://symfony.com/doc/current/reference/constraints/Length.html
      */
     private $author;
 
@@ -97,6 +100,7 @@ class BlogPost
 	 * @Assert\NotBlank(message="Bitte gib eine E-Mail Adresse an!")
 	 * @Assert\Email(message="E-Mail nicht gültig!")
 	 *
+	 * @see http://symfony.com/doc/current/reference/constraints/NotBlank.html
 	 * @see http://symfony.com/doc/current/reference/constraints/Email.html
      */
     private $email;
