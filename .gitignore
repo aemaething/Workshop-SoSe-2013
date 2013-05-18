@@ -3,6 +3,8 @@
 /app/parameters.ini
 /app/cache/*.*
 /app/logs/*.*
+/web/js/*
+/web/css/*
 /build/
 /vendor/
 /bin/
