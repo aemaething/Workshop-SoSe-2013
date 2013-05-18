@@ -4,6 +4,7 @@ namespace Workshop\LessonTwoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * BlogPost
@@ -26,6 +27,11 @@ class BlogPost
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+	 * @Assert\NotBlank(message="Bitte gib einen Titel ein!")
+	 * @Assert\MaxLength(limit=255, message="Nicht mehr als {{ limit }} Zeichen!")
+	 *
+	 * @see http://symfony.com/doc/current/reference/constraints/NotBlank.html
+	 * @see http://symfony.com/doc/current/reference/constraints/MinLength.html
      */
     private $title;
 
@@ -42,7 +48,10 @@ class BlogPost
     /**
      * @var string
      *
-     * @ORM\Column(name="subtitle", type="string", length=255)
+     * @ORM\Column(name="subtitle", type="string", length=255, nullable=true)
+	 * @Assert\MaxLength(limit=255, message="Nicht mehr als {{ limit }} Zeichen!")
+	 *
+	 * @see http://symfony.com/doc/current/reference/constraints/MinLength.html
      */
     private $subtitle;
 
@@ -50,6 +59,11 @@ class BlogPost
      * @var string
      *
      * @ORM\Column(name="abstract", type="text")
+	 * @Assert\MinLength(limit=10, message="Mindestens {{ limit }} Zeichen!")
+	 * @Assert\MaxLength(limit=1000, message="Nicht mehr als {{ limit }} Zeichen!")
+	 *
+	 * @see http://symfony.com/doc/current/reference/constraints/MaxLength.html
+	 * @see http://symfony.com/doc/current/reference/constraints/MinLength.html
      */
     private $abstract;
 
@@ -57,6 +71,11 @@ class BlogPost
      * @var string
      *
      * @ORM\Column(name="content", type="text")
+	 * @Assert\MinLength(limit=25, message="Mindestens {{ limit }} Zeichen!")
+	 * @Assert\MaxLength(limit=2000, message="Nicht mehr als {{ limit }} Zeichen!")
+	 *
+	 * @see http://symfony.com/doc/current/reference/constraints/MaxLength.html
+	 * @see http://symfony.com/doc/current/reference/constraints/MinLength.html
      */
     private $content;
 
@@ -64,6 +83,10 @@ class BlogPost
      * @var string
      *
      * @ORM\Column(name="author", type="string", length=64)
+	 * @Assert\NotBlank(message="Bitte gib einen Autor an!")
+	 * @Assert\MaxLength(limit=64, message="Nicht mehr als {{ limit }} Zeichen!")
+	 *
+	 * @see http://symfony.com/doc/current/reference/constraints/MaxLength.html
      */
     private $author;
 
@@ -71,6 +94,10 @@ class BlogPost
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=128)
+	 * @Assert\NotBlank(message="Bitte gib eine E-Mail Adresse an!")
+	 * @Assert\Email(message="E-Mail nicht gültig!")
+	 *
+	 * @see http://symfony.com/doc/current/reference/constraints/Email.html
      */
     private $email;
 
@@ -97,7 +124,11 @@ class BlogPost
     /**
      * @var boolean
      *
-     * @ORM\Column(name="is_online", type="boolean")
+     * @ORM\Column(name="is_online", type="boolean", nullable=true)
+	 *
+	 * @Assert\Choice(choices={true, false, 0, 1, null, "0", "1"}, message="Ungültiger Wert!")
+	 *
+	 * @see http://symfony.com/doc/current/reference/constraints/Choice.html
      */
     private $isOnline;
 

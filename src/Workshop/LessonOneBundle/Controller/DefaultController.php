@@ -12,7 +12,6 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="workshop_lessonOne_default_index")
      * @Template()
-	 *
 	 * @see http://twig.sensiolabs.org/documentation
      */
     public function indexAction()

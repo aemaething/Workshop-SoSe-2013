@@ -29,7 +29,7 @@ class BuildMenuListener {
 			"route" => "workshop_lessonTwo_blog_index"));
 		$blog->addChild("Blog paged", array(
 			"route" => "workshop_lessonTwo_blog_paged"));
-
+		$blog->addChild("Blog create", array(
+			"route" => "workshop_lessonTwo_blog_create"));
 	}
-
 }

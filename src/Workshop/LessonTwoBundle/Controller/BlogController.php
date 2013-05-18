@@ -6,7 +6,9 @@ namespace Workshop\LessonTwoBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
 use Workshop\LessonTwoBundle\Entity\BlogPost;
+use Workshop\LessonTwoBundle\Form\BlogPostType;
 
 
 /**
@@ -77,5 +79,57 @@ class BlogController extends Controller {
 			'blogPost' => $blogPost,
 			'page' => $page
 		);
+	}
+
+
+	/**
+	 * @Route("/create", name="workshop_lessonTwo_blog_create")
+	 * @Template()
+	 * @param Request $request
+	 * @return array
+	 */
+	public function createAction(Request $request) {
+		// Request wird automatisch eingefügt
+		// Alternativ: $request = $this->get('request') oder
+		//             $request = $this->getRequest()
+
+		$blogPost = new BlogPost();
+		$form = $this->createForm(new BlogPostType(), $blogPost);
+
+		if ($request->isMethod('POST')) {		// ist es ein POST request?
+
+			$form->bind($request);				// Request an Formular reichen
+			if ($form->isValid()) {				// ist das Formular gültig?
+				$entityManager = $this			// entity manager holen
+					->getDoctrine()
+					->getManager();
+
+				$entityManager->persist($blogPost);		// Objekt zum Speichern registrieren
+				$entityManager->flush();				// Speichern
+
+				// Tipp: Immer einen Redirect auf einen GET nach einem erfolgreichen POST.
+				// Weil: Wenn der User Reload drückt, werden die Daten nicht zweimal
+				//       gespeichert.
+				return $this->redirect($this->generateUrl(		// Umleiten zur Ansicht
+					'workshop_lessonTwo_blog_detail_id',
+					array('id' => $blogPost->getId(), 'page' => 1)));
+			}
+		}
+
+		return array(
+			'form' => $form->createView()
+		);
+	}
+
+
+	function arrayDemo() {
+
+		// array list
+		$data = array("aaa", "bbb", "ccc");
+		$data[3] = "ddd";
+
+		// hash map
+		$data = array("aaa" => "AAA", "bbb" => "BBB", 4 => 4444);
+
 	}
 }

@@ -15,10 +15,9 @@ class BuildMenuListener {
 					"extras" => array("safe_label" => true),
 					"childrenAttributes" => array("class" => "dropdown-menu")));
 
-		$lessonOne->addChild("Index", array(
+		$lessonOne->addChild("Templating", array(
 				"route" => "workshop_lessonOne_default_index"));
-		$lessonOne->addChild("Secured Page", array(
+		$lessonOne->addChild("Security", array(
 				"route" => "workshop_lessonOne_secured_index"));
-
 	}
 }
