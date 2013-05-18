@@ -1,5 +1,5 @@
-Symfony Workshop
-================
+Symfony Workshop SoSe2013
+=========================
 Wilkommen zum [**Symfony**][1] Workshop SoSe2013!
 
 1) Notwendige Hardware
