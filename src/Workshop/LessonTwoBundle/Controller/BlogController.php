@@ -71,7 +71,7 @@ class BlogController extends Controller {
 			->findOneOnlineById($id);
 
 		if (! $blogPost instanceof BlogPost) {
-			throw $this->createNotFoundException(
+			throw $this->createNotFoundException(		//erzeuge einen 404 Fehler! => HTTP Status Codes
 					sprintf('BlogPost [%s] wurde nicht gefunden.', $id));
 		}
 
