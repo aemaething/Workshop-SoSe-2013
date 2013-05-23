@@ -99,6 +99,7 @@ class BlogPost
      * @ORM\Column(name="email", type="string", length=128)
 	 * @Assert\NotBlank(message="Bitte gib eine E-Mail Adresse an!")
 	 * @Assert\Email(message="E-Mail nicht gültig!")
+	 * @Assert\Length(max=128, maxMessage="Nicht mehr als {{ limit }} Zeichen!")
 	 *
 	 * @see http://symfony.com/doc/current/reference/constraints/NotBlank.html
 	 * @see http://symfony.com/doc/current/reference/constraints/Email.html
