@@ -120,16 +120,4 @@ class BlogController extends Controller {
 			'form' => $form->createView()
 		);
 	}
-
-
-	function arrayDemo() {
-
-		// array list
-		$data = array("aaa", "bbb", "ccc");
-		$data[3] = "ddd";
-
-		// hash map
-		$data = array("aaa" => "AAA", "bbb" => "BBB", 4 => 4444);
-
-	}
 }
