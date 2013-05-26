@@ -31,5 +31,16 @@ class BuildMenuListener {
 			"route" => "workshop_lessonTwo_blog_paged"));
 		$blog->addChild("Blog create", array(
 			"route" => "workshop_lessonTwo_blog_create"));
+
+
+
+		$blogPlus = $lessonTwo->addChild("Blog Plus", array(
+			"uri" => "#",
+			"linkAttributes" => array("class" => "dropdown-toggle", "data-toggle" => "dropdown"),
+			"attributes" => array("class" => "dropdown-submenu pull-left"),
+			"childrenAttributes" => array("class" => "dropdown-menu")));
+
+		$blogPlus->addChild("Blog index", array(
+			"route" => "workshop_lessonTwo_blogPlus_index"));
 	}
 }
