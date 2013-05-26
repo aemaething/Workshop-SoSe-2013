@@ -19,5 +19,12 @@
 			class="Workshop\LessonTwoBundle\Entity\BlogPostRepository">
 			<argument>Workshop\LessonTwoBundle\Entity\BlogPost</argument>
 		</service>
+
+		<service id="workshop_lesson_two.repository.blog_post_comment"
+				 factory-service="doctrine"
+				 factory-method="getRepository"
+				 class="Workshop\LessonTwoBundle\Entity\BlogPostCommentRepository">
+			<argument>Workshop\LessonTwoBundle\Entity\BlogPostComment</argument>
+		</service>
     </services>
 </container>
